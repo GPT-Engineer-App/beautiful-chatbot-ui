@@ -4,7 +4,6 @@ import { FaMoon, FaSun, FaPaperPlane } from "react-icons/fa";
 
 // Extend the theme to include custom colors, fonts, etc.
 const theme = extendTheme({
-  initialColorMode: "dark",
   colors: {
     dark: {
       700: "#1A202C",
@@ -14,7 +13,7 @@ const theme = extendTheme({
     },
   },
   config: {
-    useSystemColorMode: false,
+    useSystemColorMode: true,
   },
 });
 
@@ -50,10 +49,6 @@ const Index = () => {
               </Box>
             ))}
           </VStack>
-          <HStack w="full" maxW="md" mx="auto">
-            <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} />
-            <IconButton icon={<FaPaperPlane />} isRound={true} onClick={sendMessage} bg="green.500" color="white" />
-          </HStack>
         </VStack>
       </Box>
     </ChakraProvider>
