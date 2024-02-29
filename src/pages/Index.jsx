@@ -4,13 +4,17 @@ import { FaMoon, FaSun, FaPaperPlane } from "react-icons/fa";
 
 // Extend the theme to include custom colors, fonts, etc.
 const theme = extendTheme({
+  initialColorMode: "dark",
   colors: {
     dark: {
-      700: "#1A202C", // Example dark grey background
+      700: "#1A202C",
     },
     green: {
-      500: "#48BB78", // Example light green accent for buttons
+      500: "#48BB78",
     },
+  },
+  config: {
+    useSystemColorMode: false,
   },
 });
 
@@ -29,10 +33,13 @@ const Index = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={bg} color={color} minH="100vh" p={4}>
+      <Box bg={bg} color={color} minH="100vh" p={4} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <VStack spacing={4}>
+          <Text fontSize="xl" p={4} textAlign="center" w="full">
+            bettr v0.1
+          </Text>
           <IconButton icon={colorMode === "light" ? <FaMoon /> : <FaSun />} isRound={true} size="lg" alignSelf="flex-end" onClick={toggleColorMode} bg={useColorModeValue("green.500", "gray.600")} color="white" />
-          <VStack spacing={4} w="full" maxW="md" mx="auto" bg={useColorModeValue("gray.100", "gray.700")} p={4} borderRadius="md" boxShadow="md">
+          <VStack spacing={4} w="full" maxW="md" bg={useColorModeValue("gray.100", "gray.700")} p={4} borderRadius="md" boxShadow="md">
             {messages.map((msg, index) => (
               <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
                 <Text>{msg}</Text>
