@@ -37,7 +37,7 @@ const Index = () => {
           bettr v0.1
         </Text>
         <VStack spacing={4} w="full" maxW="md" mx="auto" flexGrow={1}>
-          <VStack spacing={4} w="full" h="full" px={4} py={2} bg={useColorModeValue("gray.100", "gray.700")} borderRadius="md" boxShadow="md" overflowY="auto">
+          <VStack spacing={4} w="full" h="full" px={4} py={2} bg={useColorModeValue("gray.100", "gray.800")} borderRadius="md" boxShadow="md" overflowY="auto">
             {messages.map((msg, index) => (
               <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
                 <Text>{msg}</Text>
@@ -49,13 +49,6 @@ const Index = () => {
             <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} />
             <IconButton icon={<FaPaperPlane />} isRound={true} onClick={sendMessage} bg="green.500" color="white" />
           </HStack>
-          <VStack spacing={4} w="full" maxW="md" bg={useColorModeValue("gray.100", "gray.700")} p={4} borderRadius="md" boxShadow="md">
-            {messages.map((msg, index) => (
-              <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
-                <Text>{msg}</Text>
-              </Box>
-            ))}
-          </VStack>
         </VStack>
       </Box>
     </ChakraProvider>
