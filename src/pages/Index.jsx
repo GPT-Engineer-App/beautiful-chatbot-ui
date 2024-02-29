@@ -38,7 +38,11 @@ const Index = () => {
           <Text fontSize="xl" p={4} textAlign="center" w="full">
             bettr v0.1
           </Text>
-          <IconButton icon={colorMode === "light" ? <FaMoon /> : <FaSun />} isRound={true} size="lg" alignSelf="flex-end" onClick={toggleColorMode} bg={useColorModeValue("green.500", "gray.600")} color="white" />
+
+          <HStack w="full" maxW="md" mx="auto">
+            <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} />
+            <IconButton icon={<FaPaperPlane />} isRound={true} onClick={sendMessage} bg="green.500" color="white" />
+          </HStack>
           <VStack spacing={4} w="full" maxW="md" bg={useColorModeValue("gray.100", "gray.700")} p={4} borderRadius="md" boxShadow="md">
             {messages.map((msg, index) => (
               <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
