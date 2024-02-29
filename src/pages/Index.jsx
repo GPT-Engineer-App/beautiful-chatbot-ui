@@ -19,7 +19,7 @@ const theme = extendTheme({
 
 const Index = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const bg = useColorModeValue("white", "dark.700");
+  const bg = "dark.700";
   const color = useColorModeValue("gray.800", "white");
   const [messages, setMessages] = useState([]);
   const [inputValue, setInputValue] = useState("");
