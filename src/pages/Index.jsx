@@ -34,7 +34,7 @@ const Index = () => {
     <ChakraProvider theme={theme}>
       <Box bg={bg} color={color} minH="100vh" p={4} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
         <VStack spacing={4}>
-          <Text fontSize="xl" p={4} textAlign="center" w="full">
+          <Text fontSize="xl" p={4} textAlign="center" w="full" fontWeight="bold" color="white">
             bettr v0.1
           </Text>
 
