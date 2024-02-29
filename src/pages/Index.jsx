@@ -37,7 +37,7 @@ const Index = () => {
           bettr v0.1
         </Text>
         <VStack spacing={4} w="full" maxW="md" mx="auto" flexGrow={1}>
-          <VStack spacing={4} w="full" minH="calc(100vh - 100px)" px={4} py={2} bg={useColorModeValue("gray.100", "gray.800")} borderRadius="md" boxShadow="md" overflowY="auto">
+          <VStack spacing={4} w="full" minH="calc(100vh - 100px)" px={4} py={2} bg={useColorModeValue("gray.100", "gray.800")} borderRadius="md" boxShadow="md" overflowY="auto" flexDirection="column-reverse">
             {messages.map((msg, index) => (
               <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
                 <Text>{msg}</Text>
@@ -46,7 +46,7 @@ const Index = () => {
           </VStack>
 
           <HStack w="full" maxW="md" mx="auto">
-            <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} />
+            <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} color="white" />
             <IconButton icon={<FaPaperPlane />} isRound={true} onClick={sendMessage} bg="green.500" color="white" />
           </HStack>
         </VStack>
