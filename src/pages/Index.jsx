@@ -32,11 +32,18 @@ const Index = () => {
 
   return (
     <ChakraProvider theme={theme}>
-      <Box bg={bg} color={color} minH="100vh" p={4} display="flex" flexDirection="column" alignItems="center" justifyContent="center">
-        <VStack spacing={4}>
-          <Text fontSize="xl" p={4} textAlign="center" w="full" fontWeight="bold" color="white">
-            bettr v0.1
-          </Text>
+      <Box bg={bg} color={color} minH="100vh" p={4} display="flex" flexDirection="column" alignItems="start" justifyContent="start">
+        <Text fontSize="xl" p={4} textAlign="center" w="full" fontWeight="bold" color="white" alignSelf="center">
+          bettr v0.1
+        </Text>
+        <VStack spacing={4} w="full" maxW="md" mx="auto" flexGrow={1}>
+          <VStack spacing={4} w="full" h="full" px={4} py={2} bg={useColorModeValue("gray.100", "gray.700")} borderRadius="md" boxShadow="md" overflowY="auto">
+            {messages.map((msg, index) => (
+              <Box key={index} p={3} bg="green.500" borderRadius="md" alignSelf="flex-end">
+                <Text>{msg}</Text>
+              </Box>
+            ))}
+          </VStack>
 
           <HStack w="full" maxW="md" mx="auto">
             <Input placeholder="Type a message..." value={inputValue} onChange={(e) => setInputValue(e.target.value)} onKeyPress={(e) => e.key === "Enter" && sendMessage()} />
