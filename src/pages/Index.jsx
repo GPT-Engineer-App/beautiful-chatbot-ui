@@ -37,7 +37,7 @@ const Index = () => {
           bettr v0.1
         </Text>
         <VStack spacing={4} w="full" maxW="md" mx="auto" flexGrow={1}>
-          <VStack spacing={4} w="full" minH="calc(100vh - 100px)" px={4} py={2} bg={useColorModeValue("gray.100", "gray.800")} borderRadius="md" boxShadow="md" overflowY="auto">
+          <VStack spacing={4} w="full" minH="calc(100vh - 100px)" px={4} py={2} bg={useColorModeValue("gray.100", "gray.800")} borderRadius="md" boxShadow="md" overflowY="auto" alignItems="flex-end">
             {[...messages].reverse().map((msg, index) => (
               <Box key={index} p={3} bg="blue.500" borderRadius="30px" alignSelf="flex-end" color="white">
                 <Text>{msg}</Text>
